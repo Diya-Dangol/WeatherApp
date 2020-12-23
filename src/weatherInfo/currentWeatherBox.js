@@ -7,23 +7,23 @@ class CurrentWeatherBox extends Component {
         let weather=this.props.data;
         return (
                <Box style={{margin: '100px 80px 0px 40px' }}>
-                   <div style={{justifyContent: "center", marginRight:"700px"}}>
+                   <div style={{justifyContent: "center", marginRight:""}}>
                        
-                   <div style={{color:"#eb6e4b",fontSize:16}}>
+                   <div style={{color:"darkgreen",fontSize:16}}>
                        {new Date().toDateString()}
                    </div>
                    <div style={{fontSize:20,fontWeight:900}}>
                        {weather.name},{weather.sys.country}
                    </div>
                    <div>
-                       SunRise : {new Date(weather.sys.sunrise).toLocaleString()}
+                       SunRise : {new Date(weather.sys.sunrise).toLocaleString("en-GB", {timezone:'UTC'})}
                    </div>
                    <div>
                        SunSet : {new Date(weather.sys.sunset).toLocaleString()}
                    </div>
                    </div>
 
-                   <Grid container  spacing={1} style={{margin:"100px 10px 30px 20px" }}>
+                   <Grid container  spacing={1} style={{margin:"100px 10px 30px 20px", color:"darkgreen" }}>
                        <Grid item xs="6" sm="4" style={{margin:10}}>
                            <div>Temperature</div>
                            <div>{weather.main.temp}</div>
